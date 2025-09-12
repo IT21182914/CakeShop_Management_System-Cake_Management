@@ -30,12 +30,32 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and transform effects */
     cursor: pointer;
+    text-decoration: none; /* Remove default link styling */
+    color: inherit; /* Inherit color from parent */
 }
 
 /* Hover Effect for Sidebar Option */
 .sidebar-option:hover {
     background-color: #eaeaea; /* Lighter grey on hover */
     transform: translateX(5px); /* Slight shift for interactivity */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Active Sidebar Option Styling */
+.sidebar-option.active {
+    background-color: #2496b5; /* Blue background when active */
+    color: #fff; /* White text when active */
+    font-weight: bold; /* Bold text */
+    transform: translateX(5px); /* Keep the shifted position when active */
+}
+
+.sidebar-option.active p {  
+    color: white;
+}
+
+/* Adjusting icon color when active */
+.sidebar-option.active img {
+    filter: brightness(0) invert(1); /* Invert the icon color to white */
 }
 
 /* Sidebar Option Icon */
@@ -110,21 +130,4 @@
     .sidebar-option p {
         font-size: 0.85rem; /* Smallest font size */
     }
-}
-
-
-/* Active Sidebar Option Styling */
-.sidebar-option.active  {
-    background-color: #2496b5; /* Green background when active */
-    color: #fff; /* White text when active */
-    font-weight: bold; /* Bold text */
-
-}
-.sidebar-option.active p {  
-    color: white;
-}
-
-/* Adjusting icon color when active */
-.sidebar-option.active img {
-    filter: brightness(0) invert(1); /* Invert the icon color */
 }
