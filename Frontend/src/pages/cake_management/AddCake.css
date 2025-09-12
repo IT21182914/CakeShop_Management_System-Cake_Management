@@ -1,11 +1,18 @@
 
 .add {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f8f9fa;
+    flex-direction: column;
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+.page-title {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
   }
   
   form {

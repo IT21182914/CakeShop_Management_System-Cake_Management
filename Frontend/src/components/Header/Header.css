@@ -1,51 +1,40 @@
 /* Header Styles */
 .header {
   position: relative;
-  height: 100vh; /* Full viewport height */
-  background: url('/public/header_img.png') no-repeat center center; /* Center the background image */
-  background-size: cover; /* Cover the entire area */
+  height: auto; /* Auto height instead of full viewport */
+  background: none; /* Remove background image */
   display: flex;
-  justify-content: flex-start; /* Align items to the left */
-  align-items: flex-end; /* Align items to the bottom */
-  color: #ffffff; /* White text color */
-  padding: 2rem; /* Add padding for spacing */
+  justify-content: center; /* Center align */
+  align-items: center; /* Center align */
+  color: #333; /* Dark text color */
+  padding: 1rem; /* Reduced padding */
   overflow: hidden; /* Prevent overflow */
-  border-radius: 10px; /* Rounded corners */
 }
 
-/* Overlay for better readability */
+/* Remove overlay */
 .header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Darker overlay for better text readability */
-  z-index: 1;
+  display: none; /* Hide the overlay */
 }
 
 /* Header Contents */
 .header-contents {
-  position: absolute; /* Positioning to allow layering with the overlay */
+  position: static; /* Normal positioning */
   display: flex; /* Flexbox for layout */
   flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align items to the start (left) */
-  gap: 1.5rem; /* Space between items */
-  max-width: 600px; /* Max width to prevent text stretching */
-  animation: fadeIn 2s; /* Fade-in animation */
-  bottom: 10%; /* Position from the bottom */
-  left: 6%; /* Position from the left */
-  z-index: 2; /* Ensure contents are above the overlay */
+  align-items: center; /* Center align items */
+  gap: 1rem; /* Space between items */
+  max-width: 800px; /* Max width */
+  text-align: center; /* Center text */
+  z-index: 1; /* Normal z-index */
 }
 
 /* Heading Styles */
 .header-heading {
-  font-size: clamp(2rem, 5vw, 3rem); /* Responsive heading size */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive heading size */
   margin-bottom: 0.5rem; /* Space below heading */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+  text-shadow: none; /* Remove shadow */
   line-height: 1.2; /* Better line height */
-  color: #ffffff;
+  color: #333; /* Dark color for visibility */
 }
 
 /* Paragraph Styles */
