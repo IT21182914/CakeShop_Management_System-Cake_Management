@@ -138,9 +138,27 @@
     font-weight: 600;
 }
 
+/* Sidebar Option Icon - Base styling */
+.sidebar-option img {
+    width: 22px; /* Slightly smaller icon size */
+    height: 22px;
+    object-fit: contain;
+    transition: all 0.3s ease; /* Smooth icon transitions */
+    filter: none; /* Default no filter */
+}
+
+/* Icon hover effect */
+.sidebar-option:hover img {
+    transform: scale(1.1); /* Slight scale on hover */
+    filter: brightness(1.1); /* Slight brightness increase on hover */
+}
+
 /* Adjusting icon color when active */
 .sidebar-option.active img {
-    filter: brightness(0) invert(1); /* Invert the icon color to white */
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%); /* Clean white conversion */
+    opacity: 0.95; /* Slight transparency for softer look */
+    transform: scale(1.05); /* Slight scale for emphasis */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
 /* Focus state for accessibility */
@@ -193,14 +211,6 @@
 .sidebar.collapsed .sidebar-option:hover::before {
     opacity: 1;
     visibility: visible;
-}
-
-/* Sidebar Option Icon */
-.sidebar-option img {
-    width: 22px; /* Slightly smaller icon size */
-    height: 22px;
-    object-fit: contain;
-    transition: filter 0.3s ease; /* Smooth icon color transitions */
 }
 
 /* Sidebar Option Text */
