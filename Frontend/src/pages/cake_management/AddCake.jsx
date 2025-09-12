@@ -51,88 +51,150 @@ const AddCake = () => {
   };
 
   return (
-    <div className="add">
-      <h2 className="page-title">Add New Cake</h2>
-      <form className="flex-coloumn" onSubmit={onSubmitHandler} action="">
-        <div className="add-img-upload flex-coloumn">
-          <p>Upload Image</p>
-          <label htmlFor="image">
-            <img
-              src={image ? URL.createObjectURL(image) : assets.upload_area}
-              alt=""
-            />
-          </label>
-          <input
-            onChange={(e) => setImage(e.target.files[0])}
-            type="file"
-            id="image"
-            hidden
-            required
-          />
-        </div>
-        <div className="add-product-name flex-coloumn">
-          <p>Product Name</p>
-          <input
-            onChange={onChangeHandler}
-            value={data.productName}
-            type="text"
-            name="productName"
-            placeholder="Type here"
-          />
-        </div>
-        <div className="add-product-descrption flex-coloumn">
-          <p>Product Description</p>
-          <textarea
-            onChange={onChangeHandler}
-            value={data.description}
-            name="description"
-            rows="6"
-            placeholder="Write Content Here"
-          ></textarea>
-        </div>
-        <div className="add-category-price">
-          <div className="add-category flex-coloumn">
-            <p>Product Category</p>
-            <select
-              onChange={onChangeHandler}
-              value={data.category}
-              name="category"
-            >
-              <option value="Butter Cake">Butter Cake</option>
-              <option value="Layered Cake">Layered Cake</option>
-              <option value="Fruit Cake">Fruit Cake</option>
-              <option value="Cheese Cake">Cheese Cake</option>
-              <option value="Cup Cake">Cup Cake</option>
-              <option value="Theme Cake">Theme Cake</option>
-              <option value="Donut">Donut</option>
-              <option value="Pastries">Pastries</option>
-            </select>
+    <div className="add-cake-container">
+      <div className="add-cake-header">
+        <h1 className="add-cake-title">Add New Cake</h1>
+        <p className="add-cake-subtitle">
+          Create a delicious new addition to your menu
+        </p>
+      </div>
+
+      <form className="add-cake-form" onSubmit={onSubmitHandler}>
+        <div className="form-grid">
+          {/* Image Upload Section */}
+          <div className="image-upload-section">
+            <h3 className="section-title">Cake Image</h3>
+            <div className="image-upload-container">
+              <label htmlFor="image" className="image-upload-label">
+                {image ? (
+                  <div className="image-preview">
+                    <img src={URL.createObjectURL(image)} alt="Cake preview" />
+                    <div className="image-overlay">
+                      <span>Click to change</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="upload-placeholder">
+                    <img src={assets.upload_area} alt="Upload" />
+                    <h4>Upload Cake Image</h4>
+                    <p>Click here or drag & drop your image</p>
+                  </div>
+                )}
+              </label>
+              <input
+                onChange={(e) => setImage(e.target.files[0])}
+                type="file"
+                id="image"
+                accept="image/*"
+                hidden
+                required
+              />
+            </div>
           </div>
-          <div className="add-price flex-coloumn">
-            <p>Product Price</p>
-            <input
-              onChange={onChangeHandler}
-              value={data.price}
-              type="Number"
-              name="price"
-              placeholder="₹20"
-            />
-          </div>
-          <div className="add-qty flex-coloumn">
-            <p>Quantity</p>
-            <input
-              onChange={onChangeHandler}
-              value={data.qty}
-              type="Number"
-              name="qty"
-              placeholder="1"
-              min="1"
-            />
+
+          {/* Form Fields Section */}
+          <div className="form-fields-section">
+            <div className="form-group">
+              <label className="form-label">
+                <span className="label-text">Product Name</span>
+                <span className="required">*</span>
+              </label>
+              <input
+                onChange={onChangeHandler}
+                value={data.productName}
+                type="text"
+                name="productName"
+                placeholder="Enter cake name"
+                className="form-input"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                <span className="label-text">Description</span>
+              </label>
+              <textarea
+                onChange={onChangeHandler}
+                value={data.description}
+                name="description"
+                rows="4"
+                placeholder="Describe your cake..."
+                className="form-textarea"
+              />
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label className="form-label">
+                  <span className="label-text">Category</span>
+                  <span className="required">*</span>
+                </label>
+                <select
+                  onChange={onChangeHandler}
+                  value={data.category}
+                  name="category"
+                  className="form-select"
+                  required
+                >
+                  <option value="Butter Cake">Butter Cake</option>
+                  <option value="Layered Cake">Layered Cake</option>
+                  <option value="Fruit Cake">Fruit Cake</option>
+                  <option value="Cheese Cake">Cheese Cake</option>
+                  <option value="Cup Cake">Cup Cake</option>
+                  <option value="Theme Cake">Theme Cake</option>
+                  <option value="Donut">Donut</option>
+                  <option value="Pastries">Pastries</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">
+                  <span className="label-text">Price</span>
+                  <span className="required">*</span>
+                </label>
+                <div className="input-with-prefix">
+                  <span className="input-prefix">₹</span>
+                  <input
+                    onChange={onChangeHandler}
+                    value={data.price}
+                    type="number"
+                    name="price"
+                    placeholder="0.00"
+                    className="form-input with-prefix"
+                    required
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">
+                  <span className="label-text">Quantity</span>
+                  <span className="required">*</span>
+                </label>
+                <input
+                  onChange={onChangeHandler}
+                  value={data.qty}
+                  type="number"
+                  name="qty"
+                  placeholder="1"
+                  className="form-input"
+                  required
+                  min="1"
+                />
+              </div>
+            </div>
           </div>
         </div>
-        <button type="submit" className="add-btn">
-          ADD
-        </button>
+
+        <div className="form-actions">
+          <button type="submit" className="submit-btn">
+            <span className="btn-icon">+</span>
+            Add Cake to Menu
+          </button>
+        </div>
       </form>
     </div>
   );
