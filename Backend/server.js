@@ -3,9 +3,9 @@ const dotenv = require("dotenv");
 const path = require("path");
 const cors = require("cors");
 const connectDB = require("./config/db");
-const sessionSetup = require('./config/session');
-const authRoutes = require('./routes/authRoutes');
-const cakeRoutes = require('./routes/cakeRoutes');
+const sessionSetup = require("./config/session");
+const authRoutes = require("./routes/authRoutes");
+const cakeRoutes = require("./routes/cakeRoutes");
 
 dotenv.config();
 
@@ -20,8 +20,8 @@ app.use(cors());
 // Serve uploaded images
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-app.use('/api/auth', authRoutes);
-app.use('/api/cakes', cakeRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/cakes", cakeRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

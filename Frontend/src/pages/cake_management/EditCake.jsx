@@ -8,7 +8,7 @@ import { assets } from "../../assets/admin_assets/assets";
 const EditCake = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const url = "http://localhost:5000/api/cakes";
+  const url = "http://localhost:5001/api/cakes";
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -36,7 +36,7 @@ const EditCake = () => {
           category: cake.category,
           qty: cake.qty,
         });
-        setCurrentImageUrl(`http://localhost:5000/uploads/${cake.image}`);
+        setCurrentImageUrl(`http://localhost:5001/uploads/${cake.image}`);
       } else {
         toast.error("Error fetching cake data");
         navigate("/admin/cakelist");

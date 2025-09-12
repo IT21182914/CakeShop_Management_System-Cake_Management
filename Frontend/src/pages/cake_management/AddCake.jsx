@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const AddCake = () => {
-  const url = "http://localhost:5000/api/cakes";
+  const url = "http://localhost:5001/api/cakes";
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     productName: "",

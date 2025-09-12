@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const CakeList = () => {
-  const url = "http://localhost:5000/api/cakes";
+  const url = "http://localhost:5001/api/cakes";
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [deleteModal, setDeleteModal] = useState({
@@ -132,7 +132,7 @@ const CakeList = () => {
                 >
                   <div className="cake-image-container">
                     <img
-                      src={`http://localhost:5000/uploads/${item.image}`}
+                      src={`http://localhost:5001/uploads/${item.image}`}
                       alt={item.productName}
                       className="cake-image"
                     />
