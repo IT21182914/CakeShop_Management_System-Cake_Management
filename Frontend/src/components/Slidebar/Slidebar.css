@@ -2,12 +2,12 @@
 .sidebar {
     width: 18%; /* Default sidebar width for large screens */
     min-height: 100vh;
-    background-color: #f4f4f9; /* Soft background */
-    border-right: 1px solid #e0e0e0; /* Subtle border */
-    padding: 20px 10px; /* Inner spacing */
+    background: linear-gradient(180deg, #f8f9fa 0%, #f1f3f4 100%); /* Subtle gradient background */
+    border-right: 1px solid #dee2e6; /* Cleaner border */
+    padding: 20px 15px; /* Better padding */
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* Depth with shadow */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
     transition: width 0.3s ease; /* Smooth transition for width changes */
 }
 
@@ -15,8 +15,8 @@
 .sildebar-options {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between options */
-    padding-top: 50px;
+    gap: 12px; /* Reduced space between options */
+    padding-top: 30px; /* Reduced top padding */
 }
 
 /* Sidebar Option Styling */
@@ -24,33 +24,40 @@
     display: flex;
     align-items: center;
     gap: 15px; /* Space between icon and text */
-    padding: 10px 15px; /* Inner padding for each option */
+    padding: 12px 16px; /* Better padding for cleaner look */
     background-color: #ffffff; /* White background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and transform effects */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+    transition: all 0.3s ease; /* Smooth transitions */
     cursor: pointer;
     text-decoration: none; /* Remove default link styling */
-    color: inherit; /* Inherit color from parent */
+    color: #333; /* Dark text color */
+    border: 2px solid transparent; /* Invisible border for smooth transitions */
+    margin-bottom: 8px; /* Space between options */
 }
 
 /* Hover Effect for Sidebar Option */
 .sidebar-option:hover {
-    background-color: #eaeaea; /* Lighter grey on hover */
-    transform: translateX(5px); /* Slight shift for interactivity */
+    background-color: #f8f9fa; /* Very light grey on hover */
+    transform: translateY(-1px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
     text-decoration: none; /* Remove underline on hover */
+    border-color: #e9ecef; /* Light border on hover */
 }
 
 /* Active Sidebar Option Styling */
 .sidebar-option.active {
-    background-color: #2496b5; /* Blue background when active */
+    background: linear-gradient(135deg, #2496b5, #1e88a8); /* Gradient background */
     color: #fff; /* White text when active */
-    font-weight: bold; /* Bold text */
-    transform: translateX(5px); /* Keep the shifted position when active */
+    font-weight: 600; /* Semi-bold text */
+    transform: translateY(-1px); /* Keep the lifted position when active */
+    box-shadow: 0 4px 12px rgba(36, 150, 181, 0.3); /* Colored shadow for depth */
+    border-color: transparent; /* No border when active */
 }
 
 .sidebar-option.active p {  
     color: white;
+    font-weight: 600;
 }
 
 /* Adjusting icon color when active */
@@ -58,18 +65,27 @@
     filter: brightness(0) invert(1); /* Invert the icon color to white */
 }
 
+/* Focus state for accessibility */
+.sidebar-option:focus {
+    outline: 2px solid #2496b5;
+    outline-offset: 2px;
+}
+
 /* Sidebar Option Icon */
 .sidebar-option img {
-    width: 24px; /* Icon size */
-    height: 24px;
+    width: 22px; /* Slightly smaller icon size */
+    height: 22px;
     object-fit: contain;
+    transition: filter 0.3s ease; /* Smooth icon color transitions */
 }
 
 /* Sidebar Option Text */
 .sidebar-option p {
-    font-size: 1rem; /* Standard font size */
-    color: #333; /* Darker text color */
+    font-size: 0.95rem; /* Slightly smaller font size */
+    color: #495057; /* Better contrast color */
     margin: 0; /* No margin for clean layout */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s ease; /* Smooth text color transitions */
 }
 
 /* Responsive Design */
