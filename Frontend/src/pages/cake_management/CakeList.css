@@ -311,13 +311,13 @@
 }
 
 .edit-btn {
-  background: linear-gradient(135deg, #10b981, #059669);
-  border-color: #10b981;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: #3b82f6;
   color: white;
 }
 
 .edit-btn:hover {
-  background: linear-gradient(135deg, #059669, #047857);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   transform: translateY(-1px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
