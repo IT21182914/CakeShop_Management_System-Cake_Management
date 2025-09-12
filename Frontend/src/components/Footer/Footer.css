@@ -23,8 +23,6 @@
 .footer-content-left img {
     max-width: 150px; /* Limit logo size */
     margin-bottom: 15px; /* Space below logo */
-    border-radius: 22px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
     transition: transform 0.3s ease;
 }
 .footer-content-left img:hover{
